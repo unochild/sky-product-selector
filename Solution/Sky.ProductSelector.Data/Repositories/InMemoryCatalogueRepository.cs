@@ -20,9 +20,9 @@ namespace Sky.ProductSelector.Data.Repositories
             new Product { Category = "News", Name = "Sky Sports News"}
         };
 
-        public IList<Product> GetProducts(Func<Product, bool> @where)
+        public IList<Product> GetProducts(Func<Product, bool> where)
         {
-            return _products.Where(@where).ToList();
+            return _products.Where(where).ToList();
         }
     }
 }

@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Data\Repositories\ICatalogueRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ICatalogueService.cs" />
     <Compile Include="Services\ICustomerLocationService.cs" />
   </ItemGroup>
   <ItemGroup>
