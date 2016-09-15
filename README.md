@@ -12,7 +12,7 @@
 
 ## Building / Running the solution
 
-- The solution requires VS 2013. Hitting F5 should restore missing nuget packages, build and run the solution.
+- The solution requires VS 2013. Hitting F5 should restore missing nuget packages, build and run the solution (you might need to click 'restore missing packages' from the package manager window).
 - Unit tests were written using NUnit and can either be run using the ReSharper test runner or a standalone NUnit test runner (pointing at the compiled assemblies).
 
 ## Potential Improvements / Considerations (with more time)
