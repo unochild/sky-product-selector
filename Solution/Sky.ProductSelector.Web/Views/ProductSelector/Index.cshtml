@@ -1,0 +1,35 @@
+﻿@model Sky.ProductSelector.Web.Models.ProductSelectorViewModel
+
+@{
+    ViewBag.Title = "SKY - Product Selector";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Submit", "ProductSelector"))
+{
+    <div class="row">
+
+        @foreach (var category in Model.Categories)
+        {
+            <div class="col-md-4">
+                <h3>@category</h3>
+                @foreach (var product in Model.Products.Where(x => x.Category == category))
+                {
+                    <label><input type="checkbox" name="SelectedProducts" value="@product.Name" class="js-product" /> @product.Name </label><br />
+                }
+            </div>
+        }
+
+        <div class="col-md-4">
+            <h3>Basket</h3>
+            <ul class="js-basket-items">
+
+            </ul>
+            <input type="submit" name="Checkout" value="Checkout" class="btn" />
+        </div>
+
+    </div>
+
+}
+

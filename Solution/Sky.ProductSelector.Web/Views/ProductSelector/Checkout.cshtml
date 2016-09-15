@@ -1,0 +1,21 @@
+﻿@model Sky.ProductSelector.Web.Models.ProductSelectorCheckoutViewModel
+
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>Hi customer @Model.CustomerId</p>
+
+<p>You have purchased</p>
+
+@if (Model.SelectedProducts.Any())
+{
+    <ul>
+        @foreach (var product in Model.SelectedProducts)
+        {
+            <li>@product</li>
+        }
+    </ul>
+}
