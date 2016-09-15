@@ -1,7 +1,7 @@
 ﻿@model Sky.ProductSelector.Web.Models.ProductSelectorViewModel
 
 @{
-    ViewBag.Title = "SKY - Product Selector";
+    ViewBag.Title = "Choose Products";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -14,17 +14,19 @@
         {
             <div class="col-md-4">
                 <h3>@category</h3>
-                @foreach (var product in Model.Products.Where(x => x.Category == category))
-                {
-                    <label><input type="checkbox" name="SelectedProducts" value="@product.Name" class="js-product" /> @product.Name </label><br />
-                }
+                <div id="products">
+                    @foreach (var product in Model.Products.Where(x => x.Category == category))
+                    {
+                        <label><input type="checkbox" name="SelectedProducts" value="@product.Name" class="js-product" /> @product.Name </label><br />
+                    }
+                </div>
             </div>
         }
 
         <div class="col-md-4">
             <h3>Basket</h3>
             <ul class="js-basket-items">
-
+                <li>Your basket is empty</li>
             </ul>
             <input type="submit" name="Checkout" value="Checkout" class="btn" />
         </div>
