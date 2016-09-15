@@ -19,5 +19,7 @@
 
 - Write web tests to test the controllers / actions (mocking the service calls)
 - UI tests - using selenium and coded UI tests using teststack seleno
-- Implement proper DAL using an ORM (possible EF) rather than in memory repository
-- Users selections currently not persisted (refreshing page clears them)
+- Implement proper DAL using an ORM (possibly Entity Framework) rather than in memory repository
+- Product selections currently not persisted (refreshing page clears them)
+- Use Knockout / Angular for frontend - the current functionality is v simple so I felt it was probably overkill for this.
+- Use code coverage tool
