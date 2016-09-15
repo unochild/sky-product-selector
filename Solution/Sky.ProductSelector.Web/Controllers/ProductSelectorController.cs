@@ -11,6 +11,7 @@ namespace Sky.ProductSelector.Web.Controllers
     public class ProductSelectorController : Controller
     {
         private const string CustomerIdSessionKey = "CustomerId";
+        private const string SelectedProductsSessionKey = "SelectedProducts";
 
         /// <summary>
         /// The customer id
@@ -63,7 +64,7 @@ namespace Sky.ProductSelector.Web.Controllers
         public ActionResult Submit(ProductSelectorViewModel viewModel)
         {
             // add selected items to session and redirect to checkout
-            Session["SelectedProducts"] = string.Join(",", viewModel.SelectedProducts);
+            Session[SelectedProductsSessionKey] = string.Join(",", viewModel.SelectedProducts);
 
             return RedirectToAction("Checkout");
         }
@@ -72,9 +73,9 @@ namespace Sky.ProductSelector.Web.Controllers
         {
             // create view model from items in session and return view
             var viewModel = new ProductSelectorCheckoutViewModel {CustomerId = CustomerId};
-            if (Session["SelectedProducts"] != null)
+            if (Session[SelectedProductsSessionKey] != null)
             {
-                viewModel.SelectedProducts = Session["SelectedProducts"].ToString().Split(',');
+                viewModel.SelectedProducts = Session[SelectedProductsSessionKey].ToString().Split(',');
             }
             return View(viewModel);
         }
